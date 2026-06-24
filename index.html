@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BraveLink Solutions - Technology Consulting & Business Automation. CRM setup, ERP implementation, business process automation, virtual assistant services, and IT consulting.">
+    <meta name="keywords" content="business automation, CRM setup, ERP implementation, IT consulting, business process automation">
+    <title>BraveLink Solutions | Connecting Processes. Empowering Growth.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #1a3a52;
+            --primary-orange: #FF7A00;
+            --light-bg: #f8f9fa;
+            --dark-text: #1a3a52;
+            --neutral-gray: #6c757d;
+            --white: #ffffff;
+            --border-color: #e9ecef;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
+        }
+
+        /* STICKY WhatsApp CTA */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #FF6B00 100%);
+            color: var(--white);
+            padding: 14px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(255, 122, 0, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .whatsapp-sticky:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 122, 0, 0.45);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-sticky {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-orange);
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #0f2438 100%);
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 122, 0, 0.08);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 20px;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #FF6B00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border: 2px solid var(--white);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-navy);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .tagline {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .hero-cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 100px 20px;
+            background-color: var(--light-bg);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+
+        .section-header .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange);
+            margin: 0 auto 20px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--neutral-gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            position: relative;
+        }
+
+        .service-card:nth-child(1) { border-top-color: var(--primary-orange); }
+        .service-card:nth-child(2) { border-top-color: var(--primary-navy); }
+        .service-card:nth-child(3) { border-top-color: var(--primary-orange); }
+        .service-card:nth-child(4) { border-top-color: var(--primary-navy); }
+        .service-card:nth-child(5) { border-top-color: var(--primary-orange); }
+        .service-card:nth-child(6) { border-top-color: var(--primary-navy); }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #FF6B00 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--neutral-gray);
+            line-height: 1.8;
+        }
+
+        /* WHY CHOOSE US SECTION */
+        .why-choose {
+            padding: 100px 20px;
+            background-color: var(--white);
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-choose-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 30px;
+        }
+
+        .why-choose-content p {
+            font-size: 16px;
+            color: var(--neutral-gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--dark-text);
+        }
+
+        .benefit-list li::before {
+            content: '✓';
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 20px;
+            min-width: 24px;
+        }
+
+        .why-choose-visual {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #0f2438 100%);
+            padding: 60px;
+            border-radius: 12px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .why-choose-visual h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-visual p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .why-choose-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .why-choose-content h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #0f2438 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-orange);
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                text-align: center;
+            }
+        }
+
+        /* UTILITY CLASSES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            .cta-content h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky WhatsApp CTA -->
+    <a href="https://wa.me/2348012345678?text=Hi%20BraveLink%20Solutions%2C%20I'm%20interested%20in%20your%20services" target="_blank" class="whatsapp-sticky" title="Message us on WhatsApp">
+        <span>💬</span>
+        <span>Message us</span>
+    </a>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Brave<span>Link</span></a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#why-choose">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Business Operations</h1>
+            <div class="tagline">Connecting Processes. Empowering Growth.</div>
+            <p>Streamline your workflows, automate repetitive tasks, and scale your business with cutting-edge technology solutions tailored to your needs.</p>
+            <div class="hero-cta-buttons">
+                <a href="https://wa.me/2348012345678?text=Hi%20BraveLink%20Solutions%2C%20I'm%20interested%20in%20your%20services" class="btn-primary" target="_blank">Get Started on WhatsApp</a>
+                <a href="#services" class="btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="divider"></div>
+                <p>Comprehensive solutions designed to optimize your business processes and drive growth</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>CRM Setup & Implementation</h3>
+                    <p>Deploy customer relationship management systems that centralize your client data and streamline sales pipelines for better conversion and retention.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>ERP Implementation</h3>
+                    <p>Integrate enterprise resource planning solutions to unify your operations, from finance to supply chain, on a single platform.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Business Process Automation</h3>
+                    <p>Eliminate manual work with intelligent automation that reduces errors, saves time, and lets your team focus on strategic initiatives.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>Virtual Assistant Services</h3>
+                    <p>Delegate administrative and operational tasks to skilled virtual professionals, freeing up your team for high-value work.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Data Management & Analytics</h3>
+                    <p>Harness your data with proper management practices and actionable insights that drive informed decision-making.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>IT Consulting</h3>
+                    <p>Get expert guidance on technology strategy, infrastructure, cybersecurity, and digital transformation tailored to your business goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose" id="why-choose">
+        <div class="why-choose-container">
+            <div class="why-choose-content">
+                <h2>Why Choose BraveLink?</h2>
+                <p>We're not just a consulting firm—we're your strategic partner in digital transformation. Our team brings years of experience in helping businesses like yours solve complex challenges and unlock new growth opportunities.</p>
+                
+                <ul class="benefit-list">
+                    <li>Proven track record with SMEs and mid-market enterprises</li>
+                    <li>Tailored solutions that fit your unique business needs</li>
+                    <li>End-to-end implementation and support</li>
+                    <li>Rapid deployment and quick time-to-value</li>
+                    <li>Dedicated account management and ongoing optimization</li>
+                    <li>Competitive pricing with transparent costs</li>
+                </ul>
+            </div>
+
+            <div class="why-choose-visual">
+                <h3>Ready to Transform?</h3>
+                <p>Join dozens of businesses that have already streamlined their operations and increased efficiency with BraveLink Solutions.</p>
+                <a href="https://wa.me/2348012345678?text=Hi%20BraveLink%20Solutions%2C%20I'm%20interested%20in%20your%20services" class="btn-primary" target="_blank">Start Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Connect Your Processes?</h2>
+            <p>Get in touch with our team today. We're here to answer your questions and discuss how BraveLink Solutions can drive growth for your business.</p>
+            <a href="https://wa.me/2348012345678?text=Hi%20BraveLink%20Solutions%2C%20I'm%20interested%20in%20your%20services" class="btn-primary" target="_blank">Message Us on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>BraveLink Solutions</h4>
+                    <p>Technology consulting and business automation solutions for growing businesses.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <p><a href="#services">CRM Setup</a></p>
+                    <p><a href="#services">ERP Implementation</a></p>
+                    <p><a href="#services">Business Automation</a></p>
+                    <p><a href="#services">IT Consulting</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:bravelinkconsult@yahoo.com">bravelinkconsult@yahoo.com</a></p>
+                    <p><a href="https://wa.me/2348012345678" target="_blank">WhatsApp: +234 801 234 5678</a></p>
+                    <p>Website: bravelink.solutions</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <p><a href="https://instagram.com/bravelinkconsult" target="_blank">Instagram</a></p>
+                    <p><a href="https://facebook.com/bravelinkconsult" target="_blank">Facebook</a></p>
+                    <p><a href="https://linkedin.com/company/bravelinkconsult" target="_blank">LinkedIn</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 BraveLink Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
