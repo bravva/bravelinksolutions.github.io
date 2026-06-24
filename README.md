@@ -1,2 +1,2 @@
-# bravelink_solutions.github.io
+# bravelinksolutions.github.io
 This the Landing Page for bravelink solutions.
